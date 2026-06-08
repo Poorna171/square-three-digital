@@ -62,7 +62,7 @@ function Card({ w }: { w: (typeof work)[number] }) {
 }
 
 export default function Portfolio() {
-  const loop = [...work, ...work, ...work];
+  const loop = [...work, ...work];
   return (
     <section id="work" className="relative py-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
