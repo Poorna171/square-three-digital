@@ -20,12 +20,12 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/70 backdrop-blur-xl border-b border-border" : "bg-transparent"
+        scrolled ? "bg-background/40 backdrop-blur-xl border-b border-border/40" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <img src={logoAsset.url} alt="3Square.io" className="h-8 w-auto" />
+          <img src={logoAsset.url} alt="3Square.io" className="h-12 md:h-14 w-auto" />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map((l) => (
