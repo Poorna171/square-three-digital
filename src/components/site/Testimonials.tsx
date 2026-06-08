@@ -48,7 +48,7 @@ function Marquee({ items, reverse = false, duration = "50s" }: { items: typeof r
 
 export default function Testimonials() {
   return (
-    <section className="relative py-32 border-t border-border">
+    <section className="relative py-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <div className="text-xs uppercase tracking-widest text-muted-foreground">Testimonials</div>

@@ -2,7 +2,7 @@ import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-32 border-t border-border">
+    <section id="contact" className="relative py-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12">
         <div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground">Contact</div>

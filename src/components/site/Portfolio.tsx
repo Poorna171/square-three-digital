@@ -30,7 +30,7 @@ const work = [
 
 export default function Portfolio() {
   return (
-    <section id="work" className="relative py-32 border-t border-border">
+    <section id="work" className="relative py-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between flex-wrap gap-6">
           <div>
