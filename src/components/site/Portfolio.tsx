@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 const work = [
@@ -28,51 +27,67 @@ const work = [
   },
 ];
 
+const shot = (url: string) =>
+  `https://image.thum.io/get/width/1200/crop/800/noanimate/${url}`;
+
+function Card({ w }: { w: (typeof work)[number] }) {
+  return (
+    <a
+      href={w.url}
+      target="_blank"
+      rel="noopener"
+      className="group shrink-0 w-[320px] md:w-[420px] mx-3 rounded-2xl border border-border bg-card overflow-hidden hover:border-foreground/40 transition"
+    >
+      <div className="relative h-52 md:h-64 overflow-hidden bg-secondary">
+        <img
+          src={shot(w.url)}
+          alt={w.name}
+          loading="lazy"
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/10 to-transparent" />
+      </div>
+      <div className="p-5 flex items-start justify-between gap-4">
+        <div>
+          <div className="text-[10px] text-muted-foreground uppercase tracking-widest">
+            {w.tag}
+          </div>
+          <div className="mt-1 text-base font-semibold">{w.name}</div>
+          <div className="mt-1 text-xs text-muted-foreground">{w.desc}</div>
+        </div>
+        <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition shrink-0 mt-1" />
+      </div>
+    </a>
+  );
+}
+
 export default function Portfolio() {
+  const loop = [...work, ...work, ...work];
   return (
     <section id="work" className="relative py-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between flex-wrap gap-6">
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Selected Work</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">
+              Selected Work
+            </div>
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
               Built for organizations that mean business.
             </h2>
           </div>
-          <a href="#book" className="text-sm text-muted-foreground hover:text-foreground">Start your project →</a>
+          <a href="#book" className="text-sm text-muted-foreground hover:text-foreground">
+            Start your project →
+          </a>
         </div>
+      </div>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
-          {work.map((w, i) => (
-            <motion.a
-              key={w.url}
-              href={w.url}
-              target="_blank"
-              rel="noopener"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group block rounded-2xl border border-border bg-card overflow-hidden hover:border-foreground/40 transition"
-            >
-              <div className="relative h-64 overflow-hidden bg-secondary">
-                <iframe
-                  src={w.url}
-                  title={w.name}
-                  loading="lazy"
-                  className="w-[200%] h-[200%] origin-top-left scale-50 pointer-events-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
-              </div>
-              <div className="p-6 flex items-start justify-between gap-4">
-                <div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-widest">{w.tag}</div>
-                  <div className="mt-1 text-lg font-semibold">{w.name}</div>
-                  <div className="mt-1 text-sm text-muted-foreground">{w.desc}</div>
-                </div>
-                <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition" />
-              </div>
-            </motion.a>
+      <div className="mt-14 marquee-pause overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <div
+          className="flex w-max marquee-track"
+          style={{ ["--duration" as string]: "50s" }}
+        >
+          {loop.map((w, i) => (
+            <Card key={`${w.url}-${i}`} w={w} />
           ))}
         </div>
       </div>
