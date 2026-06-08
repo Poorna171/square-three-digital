@@ -24,7 +24,7 @@ export default function Booking() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section id="book" className="relative py-32 border-t border-border">
+    <section id="book" className="relative py-16 border-t border-border">
       <div className="absolute inset-0 grid-bg radial-fade opacity-30" />
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center max-w-2xl mx-auto">
