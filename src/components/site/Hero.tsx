@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Activity, Cpu, Database, Bot } from "lucide-react
 
 export default function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-24 overflow-hidden">
+    <section id="top" className="relative pt-32 pb-8 overflow-hidden">
       <div className="absolute inset-0 grid-bg radial-fade opacity-60" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full bg-white/5 blur-[120px]" />
 
