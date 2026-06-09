@@ -1,28 +1,31 @@
 import { Quote } from "lucide-react";
 
+const avatar = (seed: string) =>
+  `https://api.dicebear.com/9.x/notionists/svg?seed=${encodeURIComponent(seed)}&backgroundColor=1f2937,374151,0f172a,111827`;
+
 const rowA = [
-  { name: "Dr. R. Kumar", org: "SVCN Educational Institutions", quote: "3Square delivered a digital backbone that scales across all our campuses. Truly transformational." },
-  { name: "Principal", org: "Vibha International School", quote: "Our admissions doubled within a quarter. The team is professional, fast, and deeply skilled." },
-  { name: "Coach M.", org: "VSCA Rifle Shooting Academy", quote: "A premium brand experience that elevated our entire identity. They understood the vision." },
-  { name: "Founder", org: "Eskillate", quote: "From platform architecture to growth — they were our complete tech partner." },
-  { name: "Operations Lead", org: "Enterprise Client", quote: "Their AI agents now handle 70% of our routine workflows. ROI in weeks, not quarters." },
+  { name: "Dr. R. Kumar", org: "SVCN Educational Institutions", avatar: avatar("Kumar"), quote: "3Square delivered a digital backbone that scales across all our campuses. Truly transformational." },
+  { name: "Anita Sharma", org: "Vibha International School", avatar: avatar("Anita"), quote: "Our admissions doubled within a quarter. The team is professional, fast, and deeply skilled." },
+  { name: "Coach Manjunath", org: "VSCA Rifle Shooting Academy", avatar: avatar("Manjunath"), quote: "A premium brand experience that elevated our entire identity. They understood the vision." },
+  { name: "Rahul Verma", org: "Eskillate", avatar: avatar("Rahul"), quote: "From platform architecture to growth — they were our complete tech partner." },
+  { name: "Priya Nair", org: "Enterprise Client", avatar: avatar("Priya"), quote: "Their AI agents now handle 70% of our routine workflows. ROI in weeks, not quarters." },
 ];
 
 const rowB = [
-  { name: "CTO", org: "Logistics Co.", quote: "ERP modernization done right. We finally have one source of truth across the business." },
-  { name: "CMO", org: "DTC Brand", quote: "Site rebuild + SEO = our best quarter ever. Conversions up 3.2x." },
-  { name: "VP Engineering", org: "Fintech", quote: "Enterprise security and engineering rigor we usually only see from top-tier firms." },
-  { name: "Head of Growth", org: "SaaS Startup", quote: "From zero to a polished AI product in 8 weeks. Genuinely impressive execution." },
-  { name: "Director", org: "Healthcare", quote: "Reliable, proactive support and rock-solid infrastructure. We sleep better at night." },
+  { name: "Arjun Mehta", org: "Logistics Co.", avatar: avatar("Arjun"), quote: "ERP modernization done right. We finally have one source of truth across the business." },
+  { name: "Sneha Iyer", org: "DTC Brand", avatar: avatar("Sneha"), quote: "Site rebuild + SEO = our best quarter ever. Conversions up 3.2x." },
+  { name: "Vikram Singh", org: "Fintech", avatar: avatar("Vikram"), quote: "Enterprise security and engineering rigor we usually only see from top-tier firms." },
+  { name: "Neha Kapoor", org: "SaaS Startup", avatar: avatar("Neha"), quote: "From zero to a polished AI product in 8 weeks. Genuinely impressive execution." },
+  { name: "Dr. Suresh Rao", org: "Healthcare", avatar: avatar("Suresh"), quote: "Reliable, proactive support and rock-solid infrastructure. We sleep better at night." },
 ];
 
-function Card({ q, name, org }: { q: string; name: string; org: string }) {
+function Card({ q, name, org, avatar }: { q: string; name: string; org: string; avatar: string }) {
   return (
     <div className="shrink-0 w-[340px] md:w-[420px] rounded-2xl glass p-6 mx-3">
       <Quote className="h-5 w-5 text-muted-foreground" />
       <p className="mt-4 text-sm md:text-base leading-relaxed text-foreground/90">"{q}"</p>
       <div className="mt-6 flex items-center gap-3">
-        <div className="h-9 w-9 rounded-full bg-gradient-to-br from-white/30 to-white/5 border border-border" />
+        <img src={avatar} alt={name} className="h-10 w-10 rounded-full border border-border bg-white/5 object-cover" />
         <div>
           <div className="text-sm font-medium">{name}</div>
           <div className="text-xs text-muted-foreground">{org}</div>
