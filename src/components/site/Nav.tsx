@@ -29,7 +29,7 @@ export default function Nav() {
           <img
             src={logoAsset.url}
             alt="3Square.io"
-            className="h-14 md:h-16 w-auto"
+            className="h-14 md:h-16 w-auto brightness-0 invert"
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
