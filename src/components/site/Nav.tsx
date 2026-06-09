@@ -25,7 +25,12 @@ export default function Nav() {
     >
       <nav className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <img src={logoAsset.url} alt="3Square.io" className="h-12 md:h-14 w-auto" />
+          <img
+            src={logoAsset.url}
+            alt="3Square.io"
+            className="h-14 md:h-16 w-auto"
+            style={{ mixBlendMode: "screen" }}
+          />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {links.map((l) => (
