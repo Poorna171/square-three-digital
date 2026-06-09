@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/logo.asset.json";
+import logoAsset from "@/assets/logo-transparent.png.asset.json";
+
 
 const links = [
   { href: "#services", label: "Services" },
@@ -28,8 +29,7 @@ export default function Nav() {
           <img
             src={logoAsset.url}
             alt="3Square.io"
-            className="h-14 md:h-16 w-auto"
-            style={{ mixBlendMode: "screen" }}
+            className="h-14 md:h-16 w-auto brightness-0 invert"
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
