@@ -30,7 +30,6 @@ export default function Nav() {
             src={logoAsset.url}
             alt="3Square.io"
             className="h-14 md:h-16 w-auto"
-            style={{ mixBlendMode: "screen" }}
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
