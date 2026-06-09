@@ -24,7 +24,7 @@ export default function Nav() {
         scrolled ? "bg-background/40 backdrop-blur-xl border-b border-border/40" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-6 h-24 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
           <img
             src={logoAsset.url}
