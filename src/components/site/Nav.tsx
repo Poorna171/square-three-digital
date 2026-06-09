@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/logo-transparent.png.asset.json";
+import logoAsset from "@/assets/logo-v3.png.asset.json";
 
 
 const links = [
@@ -24,12 +24,12 @@ export default function Nav() {
         scrolled ? "bg-background/40 backdrop-blur-xl border-b border-border/40" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-6 h-24 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
           <img
             src={logoAsset.url}
             alt="3Square.io"
-            className="h-16 md:h-20 w-auto brightness-0 invert"
+            className="h-20 md:h-28 w-auto brightness-0 invert"
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
