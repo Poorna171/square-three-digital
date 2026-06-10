@@ -63,7 +63,7 @@ function StackCard({ service, index, total }: { service: typeof services[number]
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-16">
+    <section id="services" className="relative pt-16 pb-6">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <div className="text-xs uppercase tracking-widest text-muted-foreground">Capabilities</div>
