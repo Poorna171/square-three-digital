@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/logo-v3.png.asset.json";
+import logoAsset from "@/assets/square-io-logo.jpg.asset.json";
 
 
 const links = [
@@ -29,7 +29,7 @@ export default function Nav() {
           <img
             src={logoAsset.url}
             alt="3Square.io"
-            className="h-20 md:h-28 w-auto brightness-0 invert"
+            className="h-20 md:h-28 w-auto mix-blend-screen"
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">

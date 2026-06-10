@@ -1,11 +1,11 @@
-import logoAsset from "@/assets/logo-v3.png.asset.json";
+import logoAsset from "@/assets/square-io-logo.jpg.asset.json";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <img src={logoAsset.url} alt="3Square.io" className="h-16 w-auto brightness-0 invert" />
+          <img src={logoAsset.url} alt="3Square.io" className="h-16 w-auto mix-blend-screen" />
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">
             Building the Digital Backbone of Modern Organizations.
           </p>
