@@ -27,7 +27,7 @@ export default function Hero() {
         >
           Transform Your Organization
           <br />
-          Into a <span className="italic font-light">Digital Powerhouse</span>
+          Into a <span>Digital Powerhouse</span>
         </motion.h1>
 
         <motion.p
