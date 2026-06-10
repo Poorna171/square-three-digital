@@ -25,11 +25,11 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 h-24 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+        <a href="#top" className="flex items-center gap-2 rounded-xl bg-black/70 px-3 py-1.5 backdrop-blur-sm">
           <img
             src={logoAsset.url}
             alt="3Square.io"
-            className="h-20 md:h-28 w-auto mix-blend-screen"
+            className="h-20 md:h-28 w-auto"
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
