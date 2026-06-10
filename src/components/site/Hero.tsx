@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Activity, Cpu, Database, Bot } from "lucide-react";
+import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -61,7 +61,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Floating AI dashboard visual */}
+        {/* Upward growth graph animation */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,58 +70,101 @@ export default function Hero() {
         >
           <div className="relative glass rounded-2xl p-6 md:p-8 overflow-hidden">
             <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: Bot, label: "AI Agents", val: "24/7" },
-                { icon: Activity, label: "Uptime", val: "99.99%" },
-                { icon: Cpu, label: "Automations", val: "1.2k+" },
-                { icon: Database, label: "Records", val: "8.4M" },
-              ].map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + i * 0.1 }}
-                  className="rounded-xl border border-border bg-card/60 p-4"
-                >
-                  <s.icon className="h-4 w-4 text-muted-foreground" />
-                  <div className="mt-3 text-2xl font-semibold">{s.val}</div>
-                  <div className="text-xs text-muted-foreground">{s.label}</div>
-                </motion.div>
-              ))}
+
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">Growth Trajectory</div>
+                <div className="mt-2 text-3xl md:text-4xl font-semibold flex items-center gap-2">
+                  +312%
+                  <TrendingUp className="h-6 w-6 text-emerald-400" />
+                </div>
+              </div>
+              <div className="hidden md:flex gap-4 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-white/70" /> Revenue</span>
+                <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-emerald-400/80" /> Automation</span>
+              </div>
             </div>
-            <div className="mt-6 grid grid-cols-12 gap-2 h-32 items-end">
-              {Array.from({ length: 36 }).map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ height: 0 }}
-                  animate={{ height: `${20 + ((i * 17) % 80)}%` }}
-                  transition={{ duration: 1, delay: 0.8 + i * 0.02 }}
-                  className="bg-gradient-to-t from-white/40 to-white/5 rounded-sm"
+
+            <div className="relative h-64 md:h-80 w-full">
+              <svg viewBox="0 0 800 320" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stopColor="rgba(255,255,255,0.5)" />
+                    <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                  </linearGradient>
+                  <linearGradient id="lineGrad2" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stopColor="rgba(52,211,153,0.4)" />
+                    <stop offset="100%" stopColor="rgba(52,211,153,0)" />
+                  </linearGradient>
+                </defs>
+
+                {/* grid */}
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <line key={i} x1="0" x2="800" y1={i * 70 + 10} y2={i * 70 + 10} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+                ))}
+
+                {/* area fill - revenue */}
+                <motion.path
+                  d="M0,280 L80,260 L160,240 L240,220 L320,180 L400,160 L480,120 L560,100 L640,70 L720,50 L800,20 L800,320 L0,320 Z"
+                  fill="url(#lineGrad)"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.2, delay: 0.8 }}
                 />
+
+                {/* line - revenue */}
+                <motion.path
+                  d="M0,280 L80,260 L160,240 L240,220 L320,180 L400,160 L480,120 L560,100 L640,70 L720,50 L800,20"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.9)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 2, delay: 0.6, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.5 }}
+                />
+
+                {/* area fill - automation */}
+                <motion.path
+                  d="M0,300 L80,285 L160,270 L240,245 L320,225 L400,195 L480,170 L560,145 L640,115 L720,90 L800,60 L800,320 L0,320 Z"
+                  fill="url(#lineGrad2)"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.2, delay: 1 }}
+                />
+
+                {/* line - automation */}
+                <motion.path
+                  d="M0,300 L80,285 L160,270 L240,245 L320,225 L400,195 L480,170 L560,145 L640,115 L720,90 L800,60"
+                  fill="none"
+                  stroke="rgba(52,211,153,0.9)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeDasharray="4 4"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 2, delay: 0.9, ease: "easeInOut", repeat: Infinity, repeatDelay: 1.5 }}
+                />
+
+                {/* end point pulse */}
+                <motion.circle
+                  cx="800" cy="20" r="6"
+                  fill="white"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: [0, 1, 0.6, 1] }}
+                  transition={{ duration: 2, delay: 2.4, repeat: Infinity }}
+                />
+              </svg>
+            </div>
+
+            <div className="mt-4 flex justify-between text-xs text-muted-foreground">
+              {["Q1", "Q2", "Q3", "Q4", "Q5"].map((q) => (
+                <span key={q}>{q}</span>
               ))}
             </div>
           </div>
-
-          {/* floating chips */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity }}
-            className="hidden md:flex absolute -left-10 top-10 glass rounded-xl px-4 py-3 items-center gap-2 text-xs"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-pulse-ring" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-            </span>
-            AI Agent deployed
-          </motion.div>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 6, repeat: Infinity }}
-            className="hidden md:block absolute -right-10 bottom-10 glass rounded-xl px-4 py-3 text-xs"
-          >
-            +312% pipeline growth
-          </motion.div>
         </motion.div>
 
         {/* logo strip */}
