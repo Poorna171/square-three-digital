@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/logo-v3.png.asset.json";
+import logoAsset from "@/assets/square-io-logo.jpg.asset.json";
 
 
 const links = [
