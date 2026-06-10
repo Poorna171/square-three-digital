@@ -21,15 +21,15 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/40 backdrop-blur-xl border-b border-border/40" : "bg-transparent"
+        scrolled ? "bg-background/20 backdrop-blur-md border-b border-border/20" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 h-24 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+        <a href="#top" className="flex items-center gap-2 rounded-xl bg-black/70 px-3 py-1.5 backdrop-blur-sm">
           <img
             src={logoAsset.url}
             alt="3Square.io"
-            className="h-20 md:h-28 w-auto mix-blend-screen"
+            className="h-20 md:h-28 w-auto"
           />
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
