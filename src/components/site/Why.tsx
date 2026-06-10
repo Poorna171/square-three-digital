@@ -12,7 +12,7 @@ const items = [
 
 export default function Why() {
   return (
-    <section id="why" className="relative py-16 border-t border-border">
+    <section id="why" className="relative pt-6 pb-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16">
         <div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground">Why 3Square.io</div>
