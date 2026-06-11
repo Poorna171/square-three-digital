@@ -23,18 +23,9 @@ export default function Why() {
             We combine deep engineering talent with an AI-first mindset to deliver
             transformation that moves the needle.
           </p>
-          <div className="mt-10 grid grid-cols-3 gap-6">
-            {[
-              { n: "120+", l: "Projects" },
-              { n: "40+", l: "Enterprises" },
-              { n: "99.99%", l: "Uptime" },
-            ].map((s) => (
-              <div key={s.l}>
-                <div className="text-3xl font-semibold">{s.n}</div>
-                <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
-              </div>
-            ))}
-          </div>
+          <p className="mt-10 text-xl font-medium text-foreground">
+            Trustable digital partner for your organization
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {items.map((it, i) => (
