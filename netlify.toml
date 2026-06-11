@@ -1,11 +1,14 @@
 [build]
+[build]
   command = "npm run build"
-  publish = "dist"
+  publish = "dist/public"
+  functions = "dist/server"
 
 [build.environment]
-  NITRO_PRESET = "netlify"
   NODE_VERSION = "20"
+  NITRO_PRESET = "netlify"
 
-# TanStack Start (via Nitro) emits Netlify Functions for SSR routes
-# and writes static assets to `dist`. The netlify preset generates
-# the required redirects automatically — no manual _redirects needed.
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
